@@ -1,6 +1,6 @@
 pipeline:
   validate-and-test:
-    image: rust:1.95-alpine
+    image: rust:1.97-alpine
     commands:
       # Install runtime dependencies inside the isolated container 
       # (apk is the package manager in Alpine Linux)
