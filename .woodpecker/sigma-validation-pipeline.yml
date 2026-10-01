@@ -11,4 +11,4 @@ pipeline:
       
       # The actual unit tests.
       # These are kept in a separate file to enable local testing as well.
-      - bash ./tests/run_tests.sh
+      - bash ./tests/rule_tests.sh
