@@ -1,0 +1,29 @@
+name: Validate and Test
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Check out repository code onto the runner.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up the Rust toolchain.
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.75.0
+
+      # Install dependencies and rsigma.
+      # GitHub's default runners include git, bash, and build tools automatically.
+      - name: Install rsigma
+        run: cargo install rsigma --version 0.23.0
+
+      # Run your local shell script tests.
+      - name: Run Tests
+        run: bash ./tests/rule_tests.sh
