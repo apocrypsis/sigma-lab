@@ -17,7 +17,7 @@ jobs:
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@master
         with:
-          toolchain: 1.75.0
+          toolchain: 1.95.0
 
       # Install dependencies and rsigma.
       # GitHub's default runners include git, bash, and build tools automatically.
